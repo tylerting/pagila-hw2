@@ -14,7 +14,7 @@ select
     COUNT (rental_id) "Total Rentals"
 from
     rental
-order by
+group by
     ROLLUP (
     EXTRACT (YEAR FROM rental_date),
     EXTRACT (MONTH FROM rental_date)

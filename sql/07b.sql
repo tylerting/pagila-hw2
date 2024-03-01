@@ -10,5 +10,5 @@ left join customer using (customer_id)
 left join address using (address_id)
 left join city using (city_id)
 group by film.title
-having count(case when country = 'United States' then 1 end) = 0
+having count(case when city.country_id = 103 then 1 end) = 0
 order by title;

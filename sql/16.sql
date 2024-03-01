@@ -10,7 +10,7 @@
  * <https://www.postgresqltutorial.com/postgresql-window-function/postgresql-rank-function/>.
  */
 select RANK () OVER (
-    ORDER BY COALESCE(SUM(amount), 0.00) DESC
+    order by COALESCE(SUM(amount), 0.00) DESC
     ) rank, title, COALESCE(SUM(amount), 0.00) as revenue
 from film
 left join inventory using (film_id)

@@ -20,7 +20,7 @@ where film.film_id in (select film.film_id
 	left join rental on payment.rental_id = rental.rental_id
 	left join inventory on rental.inventory_id = inventory.inventory_id
 	left join film on inventory.film_id = film.film_id
-        group by film.title
+        group by film.film_id
 	order by sum(payment.amount) desc
 	limit 5)
 order by customer.customer_id;

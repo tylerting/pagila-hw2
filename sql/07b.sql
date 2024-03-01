@@ -3,7 +3,7 @@
  * but instead of using the NOT IN operator, you are to use a LEFT JOIN.
  */
 SELECT film.title as title
-join film
+from film
 join inventory using (film_id)
 left join rental using (inventory_id)
 left join customer using (customer_id)
